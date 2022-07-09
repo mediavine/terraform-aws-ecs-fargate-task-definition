@@ -80,7 +80,8 @@ module "container_definition" {
 # Task Definition
 resource "aws_ecs_task_definition" "td" {
   family                = "${var.name_prefix}-td"
-  container_definitions = length(var.containers) == 0 ? "[${module.container_definition.json_map_encoded}]" : jsonencode(var.containers)
+  # container_definitions = length(var.containers) == 0 ? "[${module.container_definition.json_map_encoded}]" : jsonencode(var.containers)
+  container_definitions = length(var.containers) == 0 ? "[${module.container_definition.json_map_encoded}]" : element(var.containers, 0)
   task_role_arn         = var.task_role_arn == null ? aws_iam_role.ecs_task_execution_role.arn : var.task_role_arn
   execution_role_arn    = aws_iam_role.ecs_task_execution_role.arn
   network_mode          = "awsvpc"
