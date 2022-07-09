@@ -189,7 +189,7 @@ variable "linux_parameters" {
 variable "log_configuration" {
   type        = any
   description = "Log configuration options to send to a custom log driver for the container. For more details, see https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_LogConfiguration.html"
-  default     = null
+  default     = {}
 }
 
 # https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_FirelensConfiguration.html
@@ -205,7 +205,7 @@ variable "log_configuration" {
 variable "firelens_configuration" {
   type = any
   description = "The FireLens configuration for the container. This is used to specify and configure a log router for container logs. For more details, see https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_FirelensConfiguration.html"
-  default     = null
+  default     = {}
 }
 
 variable "mount_points" {
