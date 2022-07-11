@@ -83,7 +83,7 @@ variable "container_cpu" {
   # https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html#fargate-task-defs
   type        = number
   description = "(Optional) The number of cpu units to reserve for the container. This is optional for tasks using Fargate launch type and the total amount of container_cpu of all containers in a task will need to be lower than the task-level cpu value"
-  default     = 1024 # 1 vCPU
+  default     = 2048 # 1 vCPU
 }
 
 variable "essential" {
