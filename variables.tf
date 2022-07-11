@@ -279,10 +279,22 @@ variable "start_timeout" {
   default     = null
 }
 
+variable "st_start_timeout" {
+  type        = number
+  description = "Time duration (in seconds) to wait before giving up on resolving dependencies for a container"
+  default     = 0
+}
+
 variable "stop_timeout" {
   type        = number
   description = "Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its own"
   default     = null
+}
+
+variable "st_stop_timeout" {
+  type        = number
+  description = "Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its own"
+  default     = 0
 }
 
 variable "privileged" {
