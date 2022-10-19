@@ -29,7 +29,7 @@ variable "container_image" {
 variable "container_memory" {
   type        = number
   description = "(Optional) The amount of memory (in MiB) to allow the container to use. This is a hard limit, if the container attempts to exceed the container_memory, the container is killed. This field is optional for Fargate launch type and the total amount of container_memory of all containers in a task will need to be lower than the task memory value"
-  default     = 8192 # 8 GB
+  default     = 4096 # 4 GB
 }
 
 variable "container_memory_reservation" {
@@ -83,7 +83,7 @@ variable "container_cpu" {
   # https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html#fargate-task-defs
   type        = number
   description = "(Optional) The number of cpu units to reserve for the container. This is optional for tasks using Fargate launch type and the total amount of container_cpu of all containers in a task will need to be lower than the task-level cpu value"
-  default     = 4096 # 4 vCPU
+  default     = 2048 # 2 vCPU
 }
 
 variable "essential" {
